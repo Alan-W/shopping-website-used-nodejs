@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>renrentou</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<script type="text/javascript" src="/static/js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+
+</head>
+<body>
+	<div class="renren-index">
+		<header>
+			<div class="header-wrapper">
+				<div class="logo-wrapper fl">
+					<a href="/">	
+					</a>
+				</div>
+				<div class="nav fl">
+					<span class="country">济南</span>
+					<a href="/city/" class="change-city">
+						<span>[切换城市]</span>
+					</a>
+					<a href="/login" class="inve-pub-project">投资项目</a>
+					<a href="/login" class="inve-pub-project">发布项目</a>
+					<a href="/" class="integration">积分商城</a>
+					<form class="search-project">
+						<input type="text" class="input-w180 search-text fl" placeholder="找项目">
+						<input type="submit" class="submit" value="搜索">
+					</form>
+				</div>
+				<div class="register fr">
+					<a href="/register">注册</a>
+					<a href="javascript:showloginblock();">登录</a>
+				</div>
+			</div>
+		</header>
+		<div class="active-all clear">
+			<div class="project-num fl">
+				<span>众筹项目总数：</span>
+				<p>185</p>
+			</div>
+			<div class="people-num fl">
+				<span>会员数：</span>
+				<p>523,004</p>
+			</div>
+			<div class="buy-money fl">
+				<span>预约认购众筹项目总金额：</span>
+				<p>4,145,345</p>
+			</div>
+			<div class="totle-money fl">
+				<span>成功众筹项目总金额：</span>
+				<p>333,333</p>
+			</div>
+		</div>
+		<div class="about-website">
+			<a class="a1" href=""></a>
+			<a class="a2" href=""></a>
+			<a class="a3" href=""></a>
+			<a class="a4" href=""></a>
+		</div>
+		<!--融资项目-->
+		<div class="project-nav">
+			<h2>融资项目</h2>
+			<p>
+				项目数：
+				<span>2</span>
+			</p>
+			<label>排序：</label>
+			<ul>
+				<li class="onlinetime">
+					<a href="">上线时间</a>
+				</li>
+				<li class="congre-amount">
+					<a href="">众筹金额</a>
+				</li>
+				<li class="attention">
+					<a href="">关注</a>
+				</li>
+				<li class="talkabout">
+				    <a href="">约谈</a>
+				</li>
+				<li class="progress">
+					<a href="">众筹进度</a>
+				</li>
+			</ul>
+			<a class="more-r fr" href=""></a>
+			<a class="expanding fr" onclick="finexpend()"></a>
+		</div>
+		<div class="preject-financing project-box" id="project-container">
+			<div class="single-project">
+				<a href="">
+					<img src=""/>
+				</a>
+				<div class="pro-title clearfix">
+					<a href="">培根逗点</a>
+					<strong>上海市上海市</strong>
+					<p>better perching</p>
+				</div>
+				<p class="financed">
+					<em>已筹资</em>
+					Y 1225000.00
+				</p>
+				<div class="progress">
+					<span>
+						<b>98%</b>
+					</span>
+				</div>
+				<div class="financing-ask clearfix">
+					<div class="total">
+						<p>Y125万</p>
+						<p>众筹融资总额</p>
+					</div>
+					<div class="perbuy">
+						<p>Y2.5万</p>
+						<p>单投资人最低出额</p>
+					</div>
+				</div>
+				<div class="exchange">
+					<em>关注：173</em>
+					<em>约谈：21</em>
+					<em>认购：29</em>
+				</div>
+			</div>
+		</div>
+		<!--分红项目-->
+		<div class="project-nav">
+			<h2>分红项目</h2>
+			<p>
+				项目数：
+				<span>31</span>
+			</p>
+			<a class="more-r fr" href=""></a>
+			<a class="expanding fr" href=""></a>
+		</div>
+		<div class="project-sharebonus project-box" id="project-container1"></div>
+		<!--预热项目-->
+		<div class="project-nav">
+			<h2>预热项目</h2>
+			<p>
+				项目数：
+				<span>21</span>
+			</p>
+			<label>排序：</label>
+			<ul>
+				<li class="onlinetime">
+					<a href="">预计上线时间</a>
+				</li>
+				<li class="congre-amount">
+					<a href="">预热时间</a>
+				</li>
+				<li class="attention">
+					<a href="">关注</a>
+				</li>
+				<li class="talkabout">
+				    <a href="">约谈</a>
+				</li>
+				<li class="progress">
+					<a href="">众筹总额</a>
+				</li>
+			</ul>
+			<a class="more-r fr" href=""></a>
+			<a class="expanding fr" href=""></a>
+		</div>
+		<div class="project-preheat project-box" id="project-container2"></div>
+		<!--成功项目-->
+		<div class="project-nav">
+			<h2>成功项目</h2>
+			<p>
+				项目数：
+				<span>162</span>
+			</p>
+			<label>排序：</label>
+			<ul>
+				<li class="onlinetime">
+					<a href="">上线时间</a>
+				</li>
+				<li class="congre-amount">
+					<a href="">众筹金额</a>
+				</li>
+				<li class="attention">
+					<a href="">关注</a>
+				</li>
+				<li class="talkabout">
+				    <a href="">约谈</a>
+				</li>
+				<li class="progress">
+					<a href="">成功用时</a>
+				</li>
+			</ul>
+			<a class="more-r fr" href=""></a>
+			<a class="expanding fr" href=""></a>
+		</div>
+		<div class="project-successs project-box" id="project-container3"></div>
+
+		<div class="step-draw">
+			<img src="/img/step-img.gif">
+		</div>
+		<div class="dreamy">
+			<div class="dream-now1 dream"></div>
+			<div class="dream-now2 dream">
+				<div class="dream-enter">
+					<a href="">发起我的梦想</a>
+				</div>
+			</div>
+			<div class="dream-now3 dream"></div>
+			<div class="dream-now4 dream"></div>
+		</div>
+		<div class="login-in" id="indexloginblock">
+			<div class="login-bg"></div>
+			<div class="login-box">
+				<div class="login-top">
+					<span>加入人人投，体验最酷的店铺投融资方式！</span>
+					<a href="">
+						<img onlick="hideloginblock()"src="/img/close-img.png"/>
+					</a>
+				</div>
+				<div class="login-left">
+					<form action="/login" method="post">
+						<div class="input-box">
+							<img class="input-img" src="/img/email.png"/>
+							<input class="input-w280" type="text" name="emails" placeholder="邮箱/手机号"/>
+						</div>
+						<div class="input-box">
+							<img class="input-img" src="/img/lock.png"/>
+							<input class="input-w280" type="password" name="password" placeholder="输入密码">
+						</div>
+						<div class="identify">
+							<input class="id-code input-w100" type="text" placeholder="输入验证码"/>
+							<img class="code" src="/img/code.png"/>
+							<a href="">看不清，换一张</a>
+						</div>
+						<div class="login-imme">
+							<input type="submit" class="input-w280" value="立即登录"/>
+						</div>
+						<a class="forget"href="">忘记密码</a>
+					</form>
+				</div>
+				<div class="login-right">
+					<p>没有账号？</p>
+					<p>欢迎注册加入我们！</p>
+					<a href="register.html">快速注册</a>
+				</div>
+			</div>
+		</div>
+    </div>
+    <footer>
+        <p>
+            <a target="_blank" href="">关于我们</a>
+            <a target="_blank" href="">联系我们</a>
+        </p>
+        <p>Copyright © 2015 人人投股权众筹平台</p>
+    </footer>
+</body>
+</html>

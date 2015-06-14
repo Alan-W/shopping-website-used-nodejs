@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script type="text/javascript" src="/js/register.js"></script>
+</head>
+<body>
+    <div class="register">
+        <header>
+            <div class="header-wrapper">
+                <div class="logo-wrapper fl">
+                    <a href="/">
+                    </a>
+                </div>
+                <div class="nav fl">
+                    <span class="country">全国</span>
+                    <a href="/city/" class="change-city">
+                        <span>[切换城市]</span>
+                    </a>
+                    <a href="/dianpu/" class="investment-project"></a>
+                    <form class="search-project">
+                        <input type="text" class="input-w200 search-text fl" placeholder="找项目">
+                        <input type="submit" class="submit" value="">
+                    </form>
+                </div>
+                <div class="regist fr">
+                   <a href="/login">登录</a>
+               </div>
+           </div>
+        </header>
+        <div class="content-box clearfix">
+            <div class="content-box-info clearfix">
+                <div class="content clearfix">
+                    <div class="content-left fl">
+                        <form action="reg" method="post" enctype="multipart/form-data" onsubmit="return checkForm()">
+                            <div class="content-left-top">注册人人投</div>
+                            <div class="resetMode">
+                                请选择：
+                                <input type="radio" name="usermold" value="2"/>
+                                项目方
+                                <input type="radio" id="usermold" name="usermold" value="1"/>
+                                投资方
+                            </div>
+                            <div class="input-box">
+                                <img class="input-img" src="/img/email.png"/>
+                                <input class="input-w280" id="emails" type="email" name="emails" placeholder="输入邮箱" onblur="checkEmail()"/>
+                                <div class="hide-hint" id="c_email">
+                                    <div class="" id="c_img_email"></div>
+                                    <span class="col" id="h_email"></span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <img class="input-img" src="/img/person.png"/>
+                                <input class="input-w300" id="name" type="text" name="name" placeholder="真实姓名" onblur="checkName()"/>
+                                <div class="hide-hint" id="c_name">
+                                    <div class="" id="c_img_name"></div>
+                                    <span class="col" id="h_name"></span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <img class="input-img" src="/img/phone.png"/>
+                                <input class="input-w300" id="phone" type="text" name="phone" placeholder="手机号码" onblur="checkPhone()"/>
+                               <div class="hide-hint" id="c_phone">
+                                    <div class="" id="c_img_phone"></div>
+                                    <span class="col" id="h_phone"></span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <img class="input-img" src="/img/phone.png"/>
+                                <input class="input-w200" id="identify" type="text" name="identify" placeholder="手机验证码">
+                                <div class="identify">
+                                   <a href="">获取验证码</a>
+                                </div>
+                                <div class=""></div>
+                            </div>
+                            <div class="input-box">
+                                <img class="input-img" src="/img/lock.png"/>
+                                <input class="input-w300" id="password" type="password" name="password" placeholder="输入密码" onblur="checkPassword()"/>
+                                <div class="hide-hint" id="c_password">
+                                    <div class="" id="c_img_password"></div>
+                                    <span class="col" id="h_password"></span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <img class="input-img" src="/img/lock.png"/>
+                                <input class="input-w300" id="passworda" type="password" name="passworda" placeholder="再次输入重复密码" onblur="checkPassworda()"/>
+                                <div class="hide-hint" id="c_repassword">
+                                    <div class id="c_img_passworda"></div>
+                                    <span class="col" id="h_passworda"></span>
+                                </div>
+                            </div>
+                            <!--<div class="input-box">
+                                <input class="input-w300" id="" type="file" name="file"/>
+                            </div>-->
+                            <div class="pro">
+                                <input type="checkbox" id="agreement" name="agreement" value="1"/>
+                                我已阅读并同意<a href="http://www.renrentou.com/publish/attachdown/type/doc/id/3">《人人投网站服务协议》</a>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="立即注册">	
+                            </div>
+                        </form>
+                    </div>
+                    <div class="content-right fr">
+                        <div class="content-right-top">安全、高效、低门槛的实体店铺投融资平台！</div>
+                        <div class="is">已有人人投账号？</div>
+                        <div class="login">
+                            <a href="/login">立即登录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <% include footer %>
+</body>
+</html>

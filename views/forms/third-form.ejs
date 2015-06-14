@@ -1,0 +1,51 @@
+<div class="draft-status" id="fourth-form" style="display:none">
+                <a class="add-map" href="javascript:showuploadblock();"></a>
+                <div class="shade-img"></div>
+                <div class="content clearfix">
+                    <div class="content-left fl">
+                        <div class="left-tit">
+                           <h2 id="title-pro">【<%=proname%>】</h2>
+                            <span class="oneword">山西主题餐厅第一馆</span>
+                            <div class="author">
+                                <span class="author-lay">发起人</span>
+                                <span class="name">曲波</span>
+                                <span>山西省太原市</span>
+                                <span>行业：<span>美食</span></span>
+                                <span>目前开店数目：<span>1</span></span>
+                            </div>
+                        </div>
+                        <div class="tab-content clearfix">
+                            <ul>
+                                <li><a href="">店铺简介</a></li>
+                                <li><a href="">预算及退出</a></li>
+                                <li><a href="">融资互动</a></li>
+                                <li><a href="">电子协议</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-right fr"></div>
+                </div>
+                <div class="login-in" id="publishuploadblock">
+                    <div class="login-bg"></div>
+                    <div class="login-box">
+                        <div class="login-top">
+                            <span>修改背景展示图片</span>
+                            <a class="fr" href="">
+                                <img onlick="hideloginblock()"src="/img/close-img.png"/>
+                            </a>
+                        </div>
+                        <form action="/up-bigimg" method= "post" enctype="multipart/form-data">
+                            <div class="uploadblock">
+                                <p>你可以选择最能展现您项目的一张图片作为封面图</p>
+                                <div class="tuwen clearfix">
+                                    <div class="tu"></div>
+                                    <div class="wen">
+                                        <input id="upimg" type="file" name="biglogo" />
+                                        <input class="sub" type="submit" name="submit" value="提交" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>

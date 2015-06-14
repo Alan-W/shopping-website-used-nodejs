@@ -1,0 +1,20 @@
+<script src="../js/jquery-1.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/appear.js" type="text/javascript"></script>
+<script src="../js/invest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$("#featureCarousel").featureCarousel({
+smallFeatureWidth: .6,
+smallFeatureHeight: .6,
+});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('.per').each(function() {
+var s = $(this).text();
+$(this).text(parseInt(s));
+});
+})
+</script>

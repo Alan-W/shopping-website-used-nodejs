@@ -1,0 +1,70 @@
+<form action="file-uploads" method= "post" class="clearfix" enctype="multipart/form-data" id="first-form">
+<div class="first-form">
+                            <div class="project-name div-pad30 clearfix">
+                                <span class="txt-right">项目名称：</span>
+                                <input type="text" class="input-w280 validate" name="remarkName" id="name" required>
+                                <span class="error-empty errMsg"></span>
+                            </div>
+                            <div class="financing-money div-pad30 clearfix">
+                                <span class="txt-right">筹资金额：</span>
+                                <input type="text" class="input-w280 number-validate" required name="money">
+                                <span class="error-empty errMsg"></span>
+                                <b class="unit">元</b>
+                            </div>
+                            <div class="financing-days div-pad30 clearfix">
+                                <span class="txt-right">筹资天数：</span>
+                                <span class="unit">30天</span>
+                            </div>
+                            <div class="industry-type div-pad30 clearfix">
+                                <span class="txt-right">行业类别：</span>
+                                <select class="trade">
+                                    <option value="0">请选择</option>
+                                    <option value="美食">美食</option>
+                                    <option value="休闲娱乐">休闲娱乐</option>
+                                    <option value="生活服务">生活服务</option>
+                                    <option value="教育培训">教育培训</option>
+                                    <option value="互联网金融">互联网金融</option>
+                                </select>
+                                <span class="error-empty errMsg"></span>
+                            </div>
+                            <div class="shop-address div-pad30">
+                                <span class="txt-right">新店地址：</span>
+                                <select class="address" id="province">
+                                    <option value="0">请选择</option>
+                                    <option value="北京市">北京市</option>
+                                    <option value="天津市">天津市</option>
+                                    <option value="广东省">广东省</option>
+                                    <option value="河北省">河北省</option>
+                                    <option value="河南省">河南省</option>
+                                    <option value="浙江省">浙江省</option>
+                                    <option value="内蒙古自治区">内蒙古自治区</option>
+                                    <option value="辽宁省">辽宁省</option>
+                                    <option value="湖南省">湖南省</option>
+                                    <option value="湖北省">湖北省</option>
+                                </select>
+                                <select id="city" class="address">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <select id="district" class="address">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <span class="error-empty errMsg" id="addressErr"></span>
+                            </div>
+                            <div class="project-cover div-pad30 clearfix">
+                                <span class="txt-right">项目封面：</span>
+                                <a class="choose-file btn btn-w100 btn-orange">
+                                    <input  type="file" name="logofiles" id="files" required>
+                                </a>
+                                <span class="support-type">支持jpg、jpeg、png、gif 格式，大小不超过2M。最佳尺寸：640 x 671px</span>
+                                <span class="errChoice error-empty errMsg"></span>
+                            </div>
+                            <div class="accept">
+                                <input type="checkbox" required>
+                                <span>我已阅读并同意《</span>
+                                <a href="">委托融资服务协议</a>》
+                            </div>
+                            <div class="submit fl">
+                                <input class="btn btn-w100 btn-red" id="nextSecond" type= "submit" value="下一步"></input>
+                            </div>
+                        </div>
+</form>

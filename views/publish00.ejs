@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publish</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script type="text/javascript" src = "js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src = "js/publish.js"></script>
+</head>
+<body>
+    <div class="publish"> 
+        <% include header %>
+        <div class="container wrapper clearfix">
+            <div class="publish-nav">
+                <span></span>
+                <h2>发布项目</h2>
+            </div>
+            <div class="publish-procedure">
+                <dl>
+                    <dt>1.项目基本信息</dt>
+                    <dt>2.奖励设置</dt>
+                    <dt>3.人人投审核</dt>
+                </dl>
+            </div>
+            <div class="content-wrapper wrapper">
+                <div class="content">
+                    <form action="file-uploads" method= "post" enctype="multipart/form-data" class="clearfix">
+                        <div class="project-name div-pad30 clearfix">
+                            <span>项目名称：</span>
+                            <input type="text" class="input-w280 validate" name="remarkName" id="name" required>
+                            <span class="error-empty errMsg"></span>
+                        </div>
+                        <div class="financing-money div-pad30 clearfix">
+                            <span>筹资金额：</span>
+                            <input type="text" class="input-w280" id ="money" required>
+                            <span class="error-empty errMsg"></span> 
+                            <b class="unit">元</b>
+                        </div>
+                        <div class="financing-days div-pad30 clearfix">
+                            <span>筹资天数：</span>
+                            <span class="unit">30天</span>
+                        </div>
+                        <div class="industry-type div-pad30 clearfix">
+                            <span>行业类别：</span>
+                            <select class="trade">
+                                <option value="0">请选择</option>
+                                <option value="美食">美食</option>
+                                <option value="休闲娱乐">休闲娱乐</option>
+                                <option value="生活服务">生活服务</option>
+                                <option value="教育培训">教育培训</option>
+                                <option value="互联网金融">互联网金融</option>
+                            </select>
+                            <span class="error-empty errMsg"></span>
+                        </div>
+                        <div class="shop-address div-pad30">
+                            <span>新店地址：</span>
+                            <select class="address" id="province">
+                                <option value="0">请选择</option>
+                                <option value="北京市">北京市</option>
+                                <option value="天津市">天津市</option>
+                                <option value="广东省">广东省</option>
+                                <option value="河北省">河北省</option>
+                                <option value="河南省">河南省</option>
+                                <option value="浙江省">浙江省</option>
+                                <option value="内蒙古自治区">内蒙古自治区</option>
+                                <option value="辽宁省">辽宁省</option>
+                                <option value="湖南省">湖南省</option>
+                                <option value="湖北省">湖北省</option>
+                            </select>
+                            <select id="city" class="address">
+                                <option value="0">请选择</option>
+                            </select>
+                            <select id="district" class="address">
+                                <option value="0">请选择</option>
+                            </select>
+                            <span class="error-empty errMsg" id="addressErr"></span>
+                        </div>
+                        <div class="project-cover div-pad30 clearfix">
+                            <span>项目封面：</span>
+                            <a class="choose-file btn btn-w100 btn-orange">
+                                <input  type="file" name="logofiles" id="files" required>
+                            </a>
+                            <span class="support-type">支持jpg、jpeg、png、gif 格式，大小不超过2M。最佳尺寸：640 x 671px</span>
+                            <span class="errChoice error-empty errMsg"></span>
+                        </div>
+                        <div class="accept">
+                            <input type="checkbox" required>
+                            <span>我已阅读并同意《</span>
+                            <a href="">委托融资服务协议</a>》
+                        </div>
+                        <div class="submit fl">
+                            <input type = "submit" class="input-w100 btn-orange">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <% include footer %>
+    </div>
+    
+</body>
+</html>

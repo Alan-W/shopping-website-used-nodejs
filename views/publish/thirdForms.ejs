@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publish</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script type="text/javascript" src = "../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src = "../js/publish.js"></script>
+</head>
+<body>
+    <div class="publish"> 
+        <% include ../header %>
+        <div class="container clearfix">
+            <div class="publish-nav wrapper">
+                <span></span>
+                <h2>发布项目</h2>
+            </div>
+            <div class="publish-procedure wrapper">
+                <dl>
+                    <dt>1.项目基本信息</dt>
+                    <dt>2.奖励设置</dt>
+                    <dt>3.人人投审核</dt>
+                </dl>
+            </div>
+            <div class="content-wrapper wrapper">
+                <div class="content">
+                    <div class="dian-tit">店铺简介</div>
+                    <div class="change-list">
+                        <p>
+                            <span>背景图宣传图</span>
+                            <a href="javascript:showuploadbigimg();">修改</a>
+                        </p>
+                        <p>
+                            <span>项目展示封面</span>
+                            <a href="javascript:showuploadcoverimg();">修改</a>
+                        </p>
+                        <p>
+                            <span>店铺基本信息</span>
+                            <a href="javascript:showuploadbasicinf();">修改</a>
+                        </p>
+                        <p>
+                            <span>编辑项目介绍</span>
+                            <a href="javascript:showuploadeditproj();">修改</a>
+                        </p>
+                        <p>
+                            <span>修改融资需求</span>
+                            <a href="javascript:showuploadfinanneed();">修改</a>
+                        </p>
+                    </div>
+                    <!--第一个修改-->
+                    <div class="login-in" id="publishuploadbigimg">
+                        <div class="login-bg"></div>
+                        <div class="login-box">
+                            <div class="login-top">
+                                <span>修改背景展示图</span>
+                                <a class="fr" href="javascript:hideuploadbigimg();">
+                                    <img src="/img/close-img.png"/>
+                                </a>
+                            </div>
+                            <form action="/up-bigimg" method= "post" enctype="multipart/form-data">
+                                <div class="uploadblock">
+                                    <p>你可以选择最能展现您项目的一张图片作为背景图</p>
+                                    <div class="tuwen clearfix">
+                                        <div class="tu"></div>
+                                        <div class="wen">
+                                            <input id="upimg" type="file" name="biglogo" />
+                                            <input style="display:none;" id="hideinf" type="text" name="hideinf" value=""/>
+
+                                            <input class="sub" type="submit" name="submit" value="提交" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--第二个修改-->
+                    <div class="login-in" id="publishuploadcoverimg">
+                        <div class="login-bg"></div>
+                        <div class="login-box">
+                            <div class="login-top">
+                                <span>修改封面展示图</span>
+                                <a class="fr" href="javascript:hideuploadcoverimg();">
+                                    <img src="/img/close-img.png"/>
+                                </a>
+                            </div>
+                            <form action="/up-coverimg" method= "post" enctype="multipart/form-data">
+                                <div class="uploadblock">
+                                    <p>你可以选择最能展现您项目的一张图片作为封面图</p>
+                                    <div class="tuwen clearfix">
+                                        <div class="tu"></div>
+                                        <div class="wen">
+                                            <input id="upimg" type="file" name="biglogo" />
+                                            <input style="display:none;" id="hideinf" type="text" name="hideinf" value=""/>
+
+                                            <input class="sub" type="submit" name="submit" value="提交" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--第三个修改-->
+                    <div class="login-in" id="publishuploadbasicinf">
+                        <div class="login-bg"></div>
+                        <div class="login-box">
+                            <div class="login-top">
+                                <span>项目基本信息修改</span>
+                                <a class="fr" href="javascript:hideuploadbasicinf();">
+                                    <img src="/img/close-img.png"/>
+                                </a>
+                            </div>
+                            <div class="uploadblock">
+                                <form class="bainf" action="/basic-inf" method= "post" enctype="multipart/form-data">
+                                    <div>
+                                        <label>项目名称：</label>
+                                        <input type="text" name="name">
+                                    </div>
+                                    <div>
+                                        <label>一句话介绍：</label>
+                                        <input type="text" name="oneword">
+                                    </div>
+                                    <div>
+                                        <label>行业：</label>
+                                        <select>
+                                            <option value="0">请选择</option>
+                                            <option value="美食">美食</option>
+                                            <option value="休闲娱乐">休闲娱乐</option>
+                                            <option value="生活服务">生活服务</option>
+                                            <option value="教育培训">教育培训</option>
+                                            <option value="互联网金融">互联网金融</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>所在地：</label>
+                                        <select id="province">
+                                            <option value="0">请选择</option>
+                                            <option value="北京市">北京市</option>
+                                            <option value="天津市">天津市</option>
+                                            <option value="广东省">广东省</option>
+                                            <option value="河北省">河北省</option>
+                                            <option value="河南省">河南省</option>
+                                            <option value="浙江省">浙江省</option>
+                                            <option value="内蒙古自治区">内蒙古自治区</option>
+                                            <option value="辽宁省">辽宁省</option>
+                                            <option value="湖南省">湖南省</option>
+                                            <option value="湖北省">湖北省</option>
+                                        </select>
+                                        <select id="city">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                        <select id="district" class="address">
+                                            <option value="0">请选择</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <input class="sub" type="submit" name="submit" value="提交" />
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--第四个修改-->
+                    <div class="login-in" id="publishuploadeditproj">
+                        <div class="login-bg"></div>
+                        <div class="login-box" style="width:650px;top:10%;left:26%;">
+                            <div class="login-top">
+                                <span>编辑项目介绍</span>
+                                <a class="fr" href="javascript:hideuploadeditproj();">
+                                    <img src="/img/close-img.png"/>
+                                </a>
+                            </div>
+                            <div class="uploadblock">
+                                <form class="editproj" action="/edit-proj" method= "post" enctype="multipart/form-data">
+                                    <div class="edit-container">
+                                        <div class="edit-toolbar">
+                                            <span class="edit-span edit1" onclick="showuploaddetailimg()"></span>
+                                            <div class="edit-upimg" id="publishuploaddetailimg">
+                                                <div class="login-bg"></div>
+                                                <div class="login-box">
+                                                    <div class="login-top">
+                                                        <span>图片</span>
+                                                        <a class="fr" href="javascript:hideuploaddetailimg();">
+                                                            <img src="/img/close-img.png"/>
+                                                        </a>
+                                                    </div>
+                                                    <form action="/up-detailimg" method= "post" enctype="multipart/form-data">
+                                                        <input class="uping" type="file" name="biglogo" />
+                                                        <input class="sub" type="submit" name="submit" value="提交" />
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <span class="edit-span"></span>
+                                            <span class="edit-span"></span>
+                                            <span class="edit-span"></span>
+                                        </div>
+                                        <div class="edit-iframe" contentEditable="true"></div>
+                                    </div>
+                                    <textarea id="edit-code"></textarea>
+                                    <div>
+                                        <input class="sub" type="submit" name="submit" value="提交" />
+                                    </div>  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第五个修改-->
+                    <div class="login-in" id="publishuploadfinanneed">
+                        <div class="login-bg"></div>
+                        <div class="login-box" style="width:600px;top:10%;left:25%;">
+                            <div class="login-top">
+                                <span>融资需求修改</span>
+                                <a class="fr" href="javascript:hideuploadfinanneed();">
+                                    <img src="/img/close-img.png"/>
+                                </a>
+                            </div>
+                            <div class="uploadblock">
+                                <form class="bainf" action="/finan-need" method= "post" enctype="multipart/form-data">
+                                    <div>
+                                        <label class="lab2"><span class="star">*</span>开店融资金额：</label>
+                                        <input style="width:200px;" type="text" name="name"><span class="unit">元</span>
+                                    </div>
+                                    <div>
+                                        <label class="lab2"><span class="star">*</span>项目方出资金额：</label>
+                                        <input type="text" name="oneword"><span class="unit">元</span>
+                                        <label class="lab2">投资人出资金额：</label>
+                                        <input type="text" name="oneword"><span class="unit">元</span>
+                                    </div>
+                                    <div>
+                                        <label class="lab2"><span class="star">*</span>认购份数：</label>
+                                        <input type="text" name="oneword"><span class="unit">份</span>
+                                        <label class="lab2">个人最低投资金额：</label>
+                                        <input type="text" name="oneword"><span class="unit">元</span>
+                                    </div>
+                                    <div>
+                                        <label class="lab2">项目方出资所占比例：</label>
+                                        <input type="text" name="oneword"><span class="unit">%</span>
+                                        <label class="lab2">投资人出资比例：</label>
+                                        <input type="text" name="oneword"><span class="unit">%</span>
+                                    </div>
+                                    <div>
+                                        <label class="lab2"><span class="star">*</span>项目方收益所占比例：</label>
+                                        <input type="text" name="oneword"><span class="unit">%</span>
+                                        <label class="lab2">投资人收益比例：</label>
+                                        <input type="text" name="oneword"><span class="unit">%</span>
+                                    </div>
+                                    <div>
+                                        <input type="text" value="<%= id %>">
+                                        <input class="sub" type="submit" name="submit" value="提交" />
+                                    </div>  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <% include ../footer %>
+</div>
+
+</body>
+</html>
