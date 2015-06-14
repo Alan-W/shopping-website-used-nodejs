@@ -1,0 +1,123 @@
+var mongodb = require('./db');
+var ObjectID = require('mongodb').ObjectID;
+<<<<<<< HEAD
+//定义Project�
+=======
+//定义Project类
+>>>>>>> origin/第三次合并
+function Project(project) {
+    this.remarkName = project.remarkName;
+    this.wholeMoney= project.money;
+    this.lowestMoney= project.lowestMoney;
+    this.type = project.type;
+    this.province = project.province;
+    this.logo = project.logo;
+        this.state = 0;
+    this.simpleDescription= project.simpleDescription;
+        this.state = 0;
+    this.background= project.background;
+    this.images= project.images;
+    this.state= 0
+}
+//输出Project
+module.exports = Project;
+//存储项目信息
+Project.prototype.save = function(callback) {
+    var project ={
+        remarkName: this.remarkName,
+        wholeMoney: this.money,
+        lowestMoney: this.lowestMoney,
+        type: this.type,
+        province: this.province,
+        logo: this.logo,
+<<<<<<< HEAD
+=======
+        state: this.state
+        
+>>>>>>> origin/第三次合并
+        simpleDescription: this.simpleDescription,
+        background: this.background,
+        state: this.state
+        
+        images: this.images,
+        state: this.state
+    }
+    mongodb.open(function(err, db) {
+        if (err) {
+            return callback(err)//错误，返回err信息
+        };
+        //读取projects集合
+        db.collection('projects', function(err, collection){
+            if (err) {
+                mongodb.close();//错误，关闭数据库
+                return callback(err);//错误，返回err信息
+            };
+            //将数据插入到projects集合
+            collection.insert(project,{ 
+                safe: true
+            }, function (err, project) {
+                mongodb.close();
+                if (err) {
+                    return callback(err);//错误，返回err信息
+                };
+                callback(null, project[0]);//成功，err为null，并返回用户存储后的文档
+            })
+        })
+    })
+}
+//获取项目信息
+Project.get = function(callback) {
+<<<<<<< HEAD
+    //打开数据�
+=======
+    //打开数据库
+>>>>>>> origin/第三次合并
+    mongodb.open(function(err, db) {
+        if(err) {
+            return callback(err);
+        }
+        db.collection('projects', function(err, collection) {
+            if(err) {
+                mongodb.close();//错误，关闭数据库
+                return callback(err);//返回错误信息
+            }
+            collection.find({}).toArray(function(err, docs) {
+<<<<<<< HEAD
+                mongodb.close();//查找的时候数据库不对外开�
+=======
+                mongodb.close();//查找的时候数据库不对外开放
+>>>>>>> origin/第三次合并
+                if(err) {
+                    return callback(err);
+                }
+                callback(err, docs) //获取成功，返回错误为null并且返回集合
+            })
+        })
+    })
+}
+//读取项目信息
+Project.get = function(state,callback){
+    //打开数据�
+    mongodb.open(function(err,db){
+        if(err){
+            return callback(err);//错误，返回err信息
+        }
+        //读取project集合
+        db.collection('projects',function(err,collection){
+            if(err){
+                mongodb.close();
+                return callback(err);//错误，返回err信息
+            }
+            //查找state值为0的project
+            collection.find({
+                state:0
+            }).toArray(function(err,projects){
+                mongodb.close();
+                if(err){
+                    return callback(err);//失败！返回err信息
+                }
+                callback(null,projects);//成功。返回查询到的项�
+            });
+        });
+    });
+};
