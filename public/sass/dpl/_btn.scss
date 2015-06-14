@@ -1,0 +1,36 @@
+.btn {
+    @include inline-block;
+    margin-bottom: 0;
+    line-height: 40px;
+    border: none;
+    outline: 0;
+    height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    @include user-select(none);
+    background-image: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    @include border-radius(3px);
+}
+.btn-w60{
+    width: 60px;
+}
+.btn-w100{
+    width: 100px;
+}
+.btn-w130{
+    width: 130px;
+}
+.btn-orange{
+    background: #db4f33;
+}
+.btn-yellow{
+    background: #F39C11;
+}
+.btn-red{
+    background: #DA4F32;
+}

@@ -1,0 +1,208 @@
+.dianpu{
+	background:#fff;
+	.header-wrapper{
+        height: 90px;
+        background: #292c3c;
+        .nav{
+            padding: 20px 0 0 40px;
+            span{
+                color: #fff;
+                padding-top: 20px;
+                @include inline-block;
+            }
+            .country{
+                font-size: 16px;
+                text-decoration: underline;
+            }
+            .change-city{
+                font-size: 14px;
+                margin-left: 10px;
+            }
+            .investment-project{
+                @include inline-block;
+                vertical-align: top;
+                background: url(/img/tips.png) no-repeat -14px -22px;
+                width: 55px;
+                height: 46px;
+                margin: 8px 10px 0 10px;
+                &:hover{
+                    background: url(/img/tips.png) no-repeat -77px -22px;
+                }
+            }
+            .search-project{
+                @include inline-block;
+                margin-left: 110px;
+                padding-top: 20px;
+                .search-text{
+                    @include border-corner-radius(top, right, 0);
+                    @include border-corner-radius(bottom, right, 0);
+                    background: #ccc;
+                }
+                .submit{
+                    background: url(/img/searchBtn.gif) no-repeat;
+                    width: 25px;
+                    height: 30px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        .header-right{
+            float: right;
+            margin-top: 22px;
+            padding-bottom: 39px;
+            position: relative;
+            &:hover{
+                .dropdown{
+                    display: block;
+                }
+            }
+            div{
+                margin-left: 15px;
+                @include inline-block;
+                cursor: pointer;
+                .vip{
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 5px;
+                    @include border-radius(13px);
+                    background: url(/img/vip.png) no-repeat;
+                }
+                .message{
+                    width: 27px;
+                    height: 25px;
+                    margin-bottom: 2px;
+                    background: url(/img/message.gif) no-repeat;
+                }
+                span{
+                    display: block;
+                }
+                a{
+                    display: block;
+                    color: #fff;
+                    font-size: 14px;
+                    .msg-num{
+                        display: inline;
+                        color: #e45432;
+                    }
+                }
+            }
+            .dropdown{
+                display: none;
+                margin: 0;
+                position: absolute;
+                margin-top: 17px;
+                left: -50px;
+                z-index: 999;
+                background: #303030;
+                @include border-corner-radius(bottom, left, 5px);
+                @include border-corner-radius(bottom, right, 5px);
+                ul{
+                    padding: 5px;
+                    li{
+                        padding: 10px;
+                        border-bottom: 1px solid #3c3c3c;
+                        a{
+                            width: 185px;
+                            color: #fff;
+                            font-size: 14px;
+                            letter-spacing: 1px;
+                            &:hover{
+                                color: #db4f33;
+                            }
+                            img{
+                                @include inline-block;
+                                padding-right: 5px;
+                                margin-top: 2px;
+                            }
+                            span{
+                                @include inline-block;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+    .content-bg{
+    	min-width:1300px;
+    	padding-top:325px;
+    	background:url(/img/dianpu/liuzi-img.jpg) no-repeat;
+        background-position:50% 0;
+        .shade-img{
+        	position:absolute;
+        	width: 100%;
+        	height: 200px;
+        	top:390px;
+        	z-index: 1;
+        	background:url(/img/img-shade.png) no-repeat;
+        }
+        .content{
+        	position: relative;
+        	width: 1000px;
+        	margin: 0 auto;
+        	z-index: 2;
+        	.content-left{
+        		width: 650px;
+        		height: 200px;
+        		background:#fff;
+        		border:1px solid #cbd2d6;
+        		.left-tit{
+        			margin-bottom:20px;
+        			padding:20px 0 0 20px;
+        			h2{
+        				font-size: 18px;
+        				color: #000;
+        			}
+        			.author{
+        				padding:10px;
+        				font-size: 14px;
+        				color: #797979;
+        				.author-lay{
+        					color: #fff;
+        					background:#ec4911;
+        					font-size: 12px;
+        					padding:1px 5px;
+        					text-align: center;
+        				}
+        				.name{
+        					color: #000;
+        					
+        				}
+        				span{
+        					padding:5px 10px;
+        				}
+        			}
+        		}
+        		.tab-content{
+        			border-bottom:3px solid #000;
+        			width: 625px;
+        			padding-left:20px;
+        			margin-top: 25px;
+        			ul{
+        				li{
+        					float: left;
+        					width: 110px;
+        					height: 40px;
+        					text-align: center;
+        					line-height: 40px;
+        					font-size: 16px;
+        					background:#e5e5e5;
+        					color: #666;
+        					margin-right: 3px;
+        				}
+        			}
+        		}
+        	}
+        	.content-right{
+        		width: 325px;
+        		height: 200px;
+        		background:#fff;
+        		border:1px solid #cbd2d6;
+        		
+        	}
+        }
+    }
+}

@@ -1,0 +1,185 @@
+.dropdown {
+    text-indent: 10px;
+    position: relative;
+    @include inline-block;
+    border: 1px solid #c9d1d1;
+    @include border-radius(4px);
+    background-color: #fff;
+    cursor: pointer;
+    @include user-select(none);
+    &:after {
+        content: "";
+        z-index: 10;
+        position: absolute;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        border-top: 1px solid #757881;
+        border-left: 1px solid #757881;
+        background-color: transparent;
+        @include rotate(225deg);
+    }
+}
+
+.dropdown-menu {
+    display: none;
+    overflow-y: auto;
+    max-height: 200px;
+    position: absolute;
+    border: 1px solid #c3c8c7;
+    @include border-radius(4px);
+    @include border-top-left-radius(0);
+    @include border-top-right-radius(0);
+    list-style: none;
+    z-index: 100;
+    background-color: #fff;
+    word-wrap: break-word;
+    li {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        &:hover {
+            background-color: #16AB4F;
+        }
+        a {
+            @include inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 35px;
+            text-indent: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: #5f636d;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            &:hover {
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.dropdown-checked {
+    border: 1px solid #16ac4e;
+    background-color: #daf9e5;
+    &:after {
+        content: "";
+        z-index: 10;
+        position: absolute;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        top: 14px;
+        right: 10px;
+        font-size: 12px;
+        border-top: 1px solid #757881;
+        border-left: 1px solid #757881;
+        background-color: transparent;
+        @include rotate(45deg);
+    }
+}
+//宽度
+.dropdown-w65 {
+    width: 65px;
+}
+
+.dropdown-w70 {
+    width: 70px;
+}
+
+.dropdown-w75 {
+    width: 75px;
+}
+
+.dropdown-w80 {
+    width: 80px;
+}
+
+.dropdown-w85 {
+    width: 85px;
+}
+
+.dropdown-w90 {
+    width: 90px;
+}
+
+.dropdown-w95 {
+    width: 95px;
+}
+
+.dropdown-w100 {
+    width: 100px;
+}
+
+.dropdown-w105 {
+    width: 105px;
+}
+
+.dropdown-w110 {
+    width: 110px;
+}
+
+.dropdown-w115 {
+    width: 115px;
+}
+
+.dropdown-w120 {
+    width: 120px;
+}
+
+.dropdown-w125 {
+    width: 125px;
+}
+
+.dropdown-w130 {
+    width: 130px;
+}
+
+.dropdown-w135 {
+    width: 135px;
+}
+
+.dropdown-w140 {
+    width: 140px;
+}
+.dropdown-w145 {
+    width: 145px;
+}
+.dropdown-w150 {
+    width: 150px;
+}
+.dropdown-w155 {
+    width: 155px;
+}
+.dropdown-w160 {
+    width: 160px;
+}
+.dropdown-w165 {
+    width: 165px;
+}
+
+//高度
+.dropdown-h25 {
+    height: 25px;
+    line-height: 25px;
+}
+
+.dropdown-h30 {
+    height: 30px;
+    line-height: 30px;
+}
+
+.dropdown-h35 {
+    height: 35px;
+    line-height: 35px;
+}
+
+.dropdown-h40 {
+    height: 40px;
+    line-height: 40px;
+}

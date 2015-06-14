@@ -1,0 +1,101 @@
+@import "_dpl.scss";
+html {
+    height: 100%;
+}
+body,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+th,
+td{
+    margin: 0;
+    padding: 0;
+}
+a{
+  font-family: "Microsoft YaHei";
+  text-decoration: none;
+  color: #777;
+  &:hover{
+    color: #15a94e;
+    text-decoration: none;
+  }
+  &:active{
+    color: #15a94e;
+  }
+}
+ol,ul,li{
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  color:#2b4965;
+  background: #e7efef;
+  line-height: 1.428;
+  overflow-x: hidden;
+}
+body,
+button,
+input,
+select,
+textarea {
+    font: 13px/1.5 'Microsoft YaHei', Verdana, Helvetica, Arial, sans-serif;
+    @include box-sizing;
+}
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+.clearfix{
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after{
+  clear: both;
+}
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
+.wrapper{
+  width: 1140px;
+  margin: 0 auto;
+}
+header{
+  width: 100%;
+  background: #292c3c;
+}
+.header-wrapper{
+  width: 1140px;
+  margin: 0 auto;
+}

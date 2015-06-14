@@ -1,0 +1,194 @@
+.users{
+    .container{
+        padding-bottom: 30px;
+        .content{
+            width: 1000px;
+            margin: 0 auto;
+            .userMsg{
+                background: #fff;
+                border: 1px solid #ccc;
+                margin-top: 35px;
+                padding: 20px 0 15px 35px;
+                .default{
+                    position: relative;
+                    z-index: 100;
+                    @include inline-block;
+                    @include border-radius(100px);
+                    border: 8px solid #fff;
+                    @include box-shadow(0 2px 3px #ccc);
+                    img{
+                        @include inline-block;
+                        @include border-radius(100px);
+                    }
+                }
+                .person{
+                    margin-left: 40px;
+                    width: 660px;
+                    .name{
+                        @include inline-block;
+                        font-size: 20px;
+                        font-weight: 100;
+                    }
+                }
+                >ul{
+                    width: 813px;
+                    float: left;
+                    height: 60px;
+                    margin-top: 5px;
+                    overflow: hidden;
+                    background: #ececec;
+                    margin-left: -6px;
+                    padding-left: 30px;
+                    li{
+                        @include inline-block;
+                        height: 60px;
+                        margin-left: 20px;
+                        padding-right: 50px;
+                        padding-top: 5px;
+                        border-right: 1px dotted #ccc;
+                        b{
+                            line-height: 14px;
+                            font-weight: normal;
+                            font-size: 18px;
+                        }
+                        p{
+                            line-height: 14px;
+                            padding-top: 5px;
+                            a{
+                                @include inline-block;
+                                line-height: 14px;
+                                color: #000;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .moneyMag{
+                        line-height: 60px;
+                        color: #e6504e;
+                        border-right: none;
+                        a{
+                            font-size: 18px;
+                            color: #db4f33;
+                        }
+                    }
+                }
+                .btn-wrapper{
+                    margin-top: 15px;
+                    margin-right: 20px;
+                    button{
+                        height: 30px;
+                        line-height: 30px;
+                        color: #fff;
+                        padding-right: 5px;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                }
+                .star{
+                    color: #000;
+                    margin-top: 73px;
+                    margin-left: 40px;
+                }
+            }
+            .shop-wrapper{
+                margin-top: 20px;
+                ul{
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    width: 230px;
+                    padding: 10px;
+                    li{
+                        float: none;
+                        position: relative;
+                        cursor: pointer;
+                        &:hover{
+                            background: #f2f2f2;
+                        }
+                        a{
+                            width: 180px;
+                            color: #000;
+                            height: 35px;
+                            line-height: 35px;
+                            padding-left: 20px;
+                            @include inline-block;
+                            .tip-icon{
+                                background: url(../img/Tip.png) no-repeat;
+                                @include inline-block;
+                                overflow: hidden;
+                            }
+                            .arrow-down{
+                                width: 10px;
+                                height: 10px;
+                                margin-top: 10px;
+                                background-position: -234px -177px;
+                            }
+                            .arrow-right{
+                                width: 5px;
+                                height: 7px;
+                                background-position: -224px -175px;
+                                @include inline-block;
+                                margin-top: 15px;
+                                float: right;
+                            }
+                            span{
+                                @include inline-block;
+                                padding-left: 10px;
+                            }
+                            .shop{
+                                width: 22px;
+                                height: 22px;
+                                background-position: -212px -254px;
+                            }
+                            .money{
+                                width: 22px;
+                                height: 25px;
+                                background-position: -210px -538px;
+                            }
+                            .action{
+                                width: 22px;
+                                height: 22px;
+                                background-position: -276px -254px;
+                            }
+                            .comment{
+                                width: 22px;
+                                height: 22px;
+                                background-position: -269px -285px;
+                            }
+                            .fans{
+                                width: 22px;
+                                height: 22px;
+                                background-position: -180px -285px;
+                            }
+                            .care{
+                                width: 22px;
+                                height: 22px;
+                                background-position: -239px -285px;
+                            }
+                        }
+                        dl{
+                            display: none;
+                            width: 230px;
+                        //    position: absolute;
+                            z-index: 100;
+                            dd{
+                                a{
+                                    text-indent: 13px;
+                                }
+                                &:hover{
+                                    background: #f2f2f2;
+                                }
+                            }
+                        }
+                    }
+                }
+                .info{
+                    background: #fff;
+                    width: 728px;
+                    margin-left: 20px;
+                    border-top: 3px solid #000;
+                    height: 228px;
+                }
+            }
+        }
+    }
+}

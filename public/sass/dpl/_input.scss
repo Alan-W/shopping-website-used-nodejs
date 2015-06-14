@@ -1,0 +1,52 @@
+input{
+    border: 1px solid #d1d1d1;
+}
+input[type="text"],
+input[type="number"],
+input[type="button"],
+input[type="password"]{
+    outline: none;
+    height: 30px;
+    line-height: 30px\9;
+    @include border-radius(4px);
+}
+input[type="button"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder{
+    color: #aea9ad;
+}
+input[type="button"]::-ms-input-placeholder,
+input[type="text"]::-ms-input-placeholder,
+input[type="password"]::-ms-input-placeholder,
+input[type="text"]::-ms-input-placeholder{
+    color: #aea9ad;
+}
+input[type="button"]::-moz-input-placeholder,
+input[type="text"]::-moz-input-placeholder,
+input[type="password"]::-moz-input-placeholder,
+input[type="text"]::-moz-input-placeholder{
+    color: #aea9ad;
+}
+input,textarea{
+    text-indent: 10px;
+    &:focus{
+        border: 2px solid #16AC4E;
+
+    }
+}
+.input-w100{
+    width: 100px;
+}
+.input-w200{
+    width: 200px;
+}
+.input-w300{
+    width: 300px;
+}
+.input-w280{
+    width: 280px;
+}
+.input-h40{
+    height: 40px;
+}

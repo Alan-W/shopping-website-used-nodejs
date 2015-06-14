@@ -1,0 +1,618 @@
+.publish{
+    background: #fff;
+    .container{
+        margin: 15px auto 50px;
+        background: #fff;
+        .publish-nav{
+            span{
+                @include inline-block;
+                width: 5px;
+                height: 20px;
+                background: #000;
+            }
+            h2{
+                @include inline-block;
+                font-size: 18px;
+                margin-left: 5px;
+                color: #000;
+            }
+        }
+        .publish-procedure{
+            margin: 40px auto;
+            dl{
+                $w-100: 100%;
+                width: $w-100;
+                background: #e6e6e6;
+                height: 30px;
+                line-height: 30px;
+                @include border-radius(6px);
+                dt{
+                    font-size: 15px;
+                    text-align: center;
+                    color: #666;
+                    @include box-sizing(border-box);
+                    width: $w-100 / 3;
+                    float: left;
+                }
+            }
+        }
+        .content-wrapper{
+            margin: 40px auto 0;
+            .content{
+                background: #ececec;
+                border: 1px solid #ccc;
+                border-top: 3px solid #000;
+                padding: 0 0 50px 20px;
+                .btn{
+                    height: 35px;
+                    line-height: 35px;
+                    color: #fff;
+                    margin-right: 30px;
+                    font-size: 16px;
+                    &:hover{
+                        @include opacity(0.5);
+                    }
+                }
+                input{
+                    float: left;
+                }
+                .financing-money{
+                    position: relative;
+                }
+                .confirm{
+                    padding: 15px 0 20px 50px;
+                    color: #000;
+                    font-size: 20px;
+                }
+                .reward{
+                    margin-top: 40px;
+                    ul{
+                        margin-left: 60px;
+                        li{
+                            width: 710px;
+                            float: none;
+                            margin: 0;
+                            padding-top: 30px;
+                            .div-inb{
+                                @include inline-block;
+                                text-align: right;
+                                font-size: 14px;
+                                position: relative;
+                                label{
+                                    @include inline-block;
+                                    vertical-align: top;
+                                    margin-left: 30px;
+                                }
+                                i{
+                                    @include inline-block;
+                                    vertical-align: top;
+                                    font-style: normal;
+                                    position: absolute;
+                                    padding-top: 3px;
+                                    left: 360px;
+                                }
+                                span{
+                                    @include inline-block;
+                                    vertical-align: top;
+                                    width: 170px;
+                                    text-align: right;
+                                    float: left;
+                                    em{
+                                        @include inline-block;
+                                        vertical-align: top;
+                                        font-style: normal;
+                                        color: #f00;
+                                    }
+                                }
+                                input{
+                                    float: left;
+                                    margin-left: 30px;
+                                }
+                                .most{
+                                    @include inline-block;
+                                }
+                                .errMsg{
+                                    display: none;
+                                    width: 170px;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                    .shares{
+                        border: 1px solid #ccc;
+                        margin: 40px 50px 0 0;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        width: 251px;
+                        height: 430px;
+                        h6{
+                            width: 234px;
+                            font-weight: bold;
+                            color: #000;
+                            line-height: 40px;
+                            padding-left: 15px;
+                        }
+                        .parts-intro{
+                            p{
+                                line-height: 30px;
+                                clear: both;
+                                span:first-child{
+                                    width: 65px;
+                                }
+                                span{
+                                    white-space: pre;
+                                    @include inline-block;
+                                    vertical-align: top;
+                                    color: #888;
+                                    padding-left: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .div-pad30{
+                    padding: 30px 0 0 110px;
+                    >span{
+                        @include inline-block;
+                        vertical-align: top;
+                        float: left;
+                    }
+                    span:first-child{
+                        padding-right: 10px;
+                        font-size: 16px;
+                        color: #666;
+                    }
+                    >b{
+                        position: absolute;
+                        left: 620px;
+                        top: 35px;
+                        padding: 4px 0 0 5px;
+                    }
+                    select{
+                        width: 135px;
+                        margin-right: 10px;
+                    }
+                    .errMsg{
+                        display: none;
+                        text-align: left;
+                        float: none;
+                    }
+                    .txt-right{
+                        width: 180px;
+                        text-align: right;
+                        padding-left: 40px;
+                        em{
+                            color: #f00;
+                            font-style: normal;
+                            line-height: 32px;
+                        }
+                    }
+                    .choose-file{
+                        @include inline-block;
+                        width: 110px;
+                        height: 32px;
+                        float: none;
+                        background: url(/img/choose-file.gif) no-repeat scroll 0 0 transparent;
+                        input{
+                            position: relative;
+                            z-index: 1000;
+                            @include opacity(0);
+                        }
+                    }
+                    .support-type{
+                        float: none;
+                    }
+                }
+                .accept{
+                    padding-top: 20px;
+                    margin-left: 250px;
+                    span{
+                        @include inline-block;
+                        vertical-align: top;
+                        padding-left: 10px;
+                    }
+                    a{
+                        @include inline-block;
+                        vertical-align: top;
+                    }
+                }
+                .submit{
+                    margin: 30px 0 30px 500px;
+                    a{
+                        border: none;
+                    }
+                    input{
+                        @include border-radius(5px);
+                        height: 35px;
+                        @include inline-block;
+                        vertical-align: top;
+                        margin-right: 20px;
+                    }
+                }
+                .errMsg{
+                    vertical-align: top;
+                }
+                .error-empty{
+                    display: none;
+                    float: none;
+                    height: 30px;
+                    line-height: 30px;
+                    background: url(/img/warn.png) no-repeat left center;
+                    padding-left: 25px;
+                    color: #A90505;
+                    margin-left: 40px;
+                }
+                .dian-tit{
+                    width: 90%;
+                    margin: 20px auto;
+                    border-bottom:2px solid #b3b3b3;
+                    font-weight: bold;
+                    font-size: 18px;
+                    height: 35px;
+                    color: #ff6633;
+                }
+                .change-list{
+                    width: 90%;
+                    margin: 20px auto;
+                    p{
+                        height: 30px;
+                        background:#fff;
+                        margin-top:20px;
+                        padding-top:10px;
+                        font-size: 14px;
+                        span{
+                            padding-left:18px;
+                            color: #000;
+                        }
+                        a{
+                            padding-right:15px;
+                            color: #ff0000;
+                            float: right;
+                            cursor:pointer;
+                        }
+                    }
+                }
+                .login-in{
+                    display: none;
+                    z-index: 3;
+                    .login-bg{ 
+                        z-index: 3;
+                        position:fixed;
+                        top:0;
+                        left:0;
+                        width: 100%;
+                        height: 100%;
+                        background:#000;
+                        @include opacity(0.4);
+                    }
+                    .login-box{
+                        z-index: 3;
+                        position:fixed;
+                        top:15%;
+                        left:36%;
+                        width: 420px;
+                        border:3px solid #666;
+                        background:#d5d5d5;
+                        .login-top{
+                            width: 100%;
+                            height: 45px;
+                            padding-top:10px;
+                            background-color:#000;
+                            color: #fff;
+                            font-size: 20px;
+                            span,a{
+                                padding:0 20px;
+                            }
+                        }
+                        .uploadblock{
+
+                            padding:10px;
+                            .tuwen{
+                                margin-top: 10px;
+                                .tu{
+                                    float:left;
+                                    width:180px;
+                                    height: 90px;
+                                    padding-right:10px;
+                                    background:#e33456;
+                                }
+                                .wen{
+                                    width: 210px;
+                                    height: 150px;
+                                    padding-top:30px;
+                                    float: right;
+                                    .sub{
+                                        width: 90px;
+                                        height: 40px;
+                                        background:#DA4F32;
+                                        color: #fff;
+                                        margin: 40px 0 0 40px;
+                                        @include border-radius(5px);
+                                    }
+                                }
+                            }
+                            .editproj{
+                                .edit-container{
+                                    border:1px solid #cccccc;
+                                    background:#fff;
+                                    height: 300px;
+                                    .edit-toolbar{
+                                        padding:2px 5px;
+                                        height: 22px;
+                                        background:#f0f0f0;
+                                        border-bottom:1px solid #cccccc;
+                                        .edit-span{
+                                            @include inline-block;
+                                            float: left;
+                                            width: 16px;
+                                            height: 16px;
+                                            background:#f00;
+                                            border:1px solid #f0f0f0;
+                                            margin: 1px;
+                                            padding:1px 2px;
+                                            cursor: pointer;
+                                        }
+                                        .edit1{
+                                            background:url(/img/default-tools.png) no-repeat 0px -494px;
+                                        }
+                                        .edit-upimg{
+                                            display: none;
+                                            z-index: 5;
+                                            .login-bg{ 
+                                                z-index: 3;
+                                                position:fixed;
+                                                top:0;
+                                                left:0;
+                                                width: 100%;
+                                                height: 100%;
+                                                background:#000;
+                                                @include opacity(0.2);
+                                            }
+                                            .login-box{
+                                                z-index: 5;
+                                                position:fixed;
+                                                top:15%;
+                                                left:36%;
+                                                width: 420px;
+                                                border:3px solid #666;
+                                                background:#d5d5d5;
+                                                .login-top{
+                                                    width: 100%;
+                                                    height: 45px;
+                                                    padding-top:10px;
+                                                    background-color:#000;
+                                                    color: #fff;
+                                                    font-size: 20px;
+                                                    span,a{
+                                                        padding:0 20px;
+                                                    }
+                                                }
+                                                .uping{
+                                                    margin:20px 0 0 30px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .edit-iframe{
+                                        height: 260px;
+                                        overflow: auto;
+                                        outline:none;
+                                    }
+                                }
+
+                                .sub{
+                                    width: 90px;
+                                    height: 40px;
+                                    background:#DA4F32;
+                                    color: #fff;
+                                    margin: 30px 0 0 170px;
+                                    @include border-radius(5px);
+                                }
+                            }
+                            .bainf{
+                                div{
+                                    margin-top: 15px;
+                                    overflow: hidden;
+                                    label{
+                                        @include inline-block;
+                                        width: 100px;
+                                        text-align: right;
+                                        font-size: 14px;
+                                        float: left;
+                                    } 
+                                    .lab2{
+                                        @include inline-block;
+                                        width: 140px;
+                                        text-align: right;
+                                        font-size: 14px;
+                                        float: left;
+                                        .star{
+                                            color: #f00;
+                                            padding-right: 5px;
+                                        }
+                                    }
+                                    .unit{
+                                        float: left;
+                                        color: #f00;
+                                        padding: 5px 0 0 5px;
+                                    }
+                                    input{
+                                        width: 100px;
+                                        height: 30px;
+                                        border:1px solid #b4b4b4;
+                                    }
+                                    .sub{
+                                        width: 90px;
+                                        height: 40px;
+                                        background:#DA4F32;
+                                        color: #fff;
+                                        margin: 30px 0 0 170px;
+                                        @include border-radius(5px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .draft-status{
+            position:relative;
+            min-width:1300px;
+            padding-top:325px;
+            background:url(/img/dianpu/liuzi-img.jpg) no-repeat;
+            background-position:50% 0;
+            .add-map{
+                position:absolute;
+                width: 140px;
+                height: 36px;
+                left: 45%;
+                top: 200px;
+                background:url(/img/add-bgmap.gif) no-repeat;
+            }
+            .shade-img{
+                position:absolute;
+                width: 100%;
+                height: 200px;
+                top:300px;
+                z-index: 1;
+                background:url(/img/img-shade.png) no-repeat;
+            }
+            .content{
+                position: relative;
+                width: 1000px;
+                margin: 0 auto;
+                z-index: 2;
+                .content-left{
+                    width: 650px;
+                    height: 200px;
+                    background:#fff;
+                    border:1px solid #cbd2d6;
+                    .left-tit{
+                        margin-bottom:20px;
+                        padding:20px 0 0 20px;
+                        h2{
+                            @include inline-block;
+                            font-size: 18px;
+                            color: #000;
+                        }
+                        .oneword{
+                            @include inline-block;
+                            font-size: 18px;
+                            color: #000;
+                        }
+                        .author{
+                            padding:10px;
+                            font-size: 14px;
+                            color: #797979;
+                            .author-lay{
+                                color: #fff;
+                                background:#ec4911;
+                                font-size: 12px;
+                                padding:1px 5px;
+                                text-align: center;
+                            }
+                            .name{
+                                color: #000;
+
+                            }
+                            span{
+                                padding:5px 10px;
+                            }
+                        }
+                    }
+                    .tab-content{
+                        border-bottom:3px solid #000;
+                        width: 625px;
+                        padding-left:20px;
+                        margin-top: 25px;
+                        ul{
+                            li{
+                                float: left;
+                                width: 110px;
+                                height: 40px;
+                                text-align: center;
+                                line-height: 40px;
+                                font-size: 16px;
+                                background:#e5e5e5;
+                                color: #666;
+                                margin-right: 3px;
+                            }
+                        }
+                    }
+                }
+                .content-right{
+                    width: 325px;
+                    height: 200px;
+                    background:#fff;
+                    border:1px solid #cbd2d6;
+
+                }
+            }
+            .login-in{
+                display: none;
+                z-index: 3;
+                .login-bg{
+                    z-index: 3;
+                    position:fixed;
+                    top:0;
+                    left:0;
+                    width: 100%;
+                    height: 100%;
+                    background:#000;
+                    @include opacity(0.4);
+                }
+                .login-box{
+                    z-index: 3;
+                    position:fixed;
+                    top:15%;
+                    left:28%;
+                    width: 420px;
+                    border:3px solid #666;
+                    background:#d5d5d5;
+                    .login-top{
+                        width: 100%;
+                        height: 45px;
+                        padding-top:10px;
+                        background-color:#000;
+                        color: #fff;
+                        font-size: 20px;
+                        span,a{
+                            padding-right:20px;
+                        }
+                    }
+                    .uploadblock{
+                       width: 400px;
+                       padding:10px;
+                       .tuwen{
+                        margin-top: 10px;
+                        .tu{
+                            float:left;
+                            width:180px;
+                            height: 90px;
+                            padding-right:10px;
+                            background:#e33456;
+                        }
+                        .wen{
+                            width: 210px;
+                            height: 150px;
+                            padding-top:30px;
+                            float: right;
+                            .sub{
+                                width: 90px;
+                                height: 40px;
+                                background:#DA4F32;
+                                color: #fff;
+                                margin: 40px 0 0 40px;
+                                @include border-radius(5px);
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+}

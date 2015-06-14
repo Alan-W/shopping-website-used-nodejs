@@ -1,0 +1,13 @@
+select{
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+    @include border-radius(4px);
+    background: #fff;
+    @include user-select(none);
+    border: 1px solid #d1d1d1;
+    &:focus{
+        border: 1px #solid #40d0e0;
+    }
+
+}
