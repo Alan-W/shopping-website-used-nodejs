@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publish</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script type="text/javascript" src = "/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src = "/js/publish.js"></script>
+</head>
+<body>
+    <div class="publish"> 
+        <% include header %>
+        <div class="container clearfix">
+            <div class="publish-nav wrapper">
+                <span></span>
+                <h2>发布项目</h2>
+            </div>
+            <div class="publish-procedure wrapper">
+                <dl>
+                    <dt>1.项目基本信息</dt>
+                    <dt>2.草稿状态编辑项目</dt>
+                    <dt>3.人人投审核</dt>
+                </dl>
+            </div>
+            <!--项目出资信息-->
+            <div class="content-wrapper wrapper" style="display:<%= displb%>;">
+                <div class="content">
+                    <form action="second-publish-forms" method= "post" class="clearfix" enctype="multipart/form-data" id="third-form" >
+                        <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                        <div class="reward clearfix" >
+                            <ul class="fl">
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>融资总额&nbsp;￥</strong>
+                                        </span>
+                                        <input type="text" class="input-w150 number-validate" required id="wholeMoney" name="wholeMoney">
+                                        <span class="error-empty errMsg"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>项目方出资及比例&nbsp;￥</strong>
+                                        </span>
+                                        <input type="text" class="input-w150 number-validate" required id="pubProportion" name="pubMoney">
+                                        <span class="error-empty errMsg"></span>
+                                        <i id="pubPercent"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>投资人出资及比例&nbsp;￥</strong>
+                                        </span>
+                                        <label class="inv-earings-ratio" id="invPropotion"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>项目方收益比例&nbsp;</strong>
+                                        </span>
+                                        <input type="text" class="input-w150 number-validate" required id="pubEarn" name="pubEarn">
+                                        <span class="error-empty errMsg"></span>
+                                        <i>%</i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span> 
+                                            <em>*</em>
+                                            <strong>投资方收益比例&nbsp;</strong>
+                                        </span>
+                                        <label class="inv-earings-ratio" id="invEarn"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>认购份数&nbsp;</strong>
+                                        </span>
+                                        <input type="text" class="input-w150" required id="buyParts" name="buyParts">
+                                        <span class="error-empty errMsg"></span>
+                                        <strong class="most">(最多不超过199份)</strong>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>单投资人最低投资金额&nbsp;￥</strong>
+                                        </span>
+                                        <label class="lowestmoney" id="perLowset"></label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="fr shares">
+                                <h6>份数推荐</h6>
+                                <div class="parts-intro" id="partsLst">
+                                </div>
+                            </div>
+                            <div class="submit fl">
+                                <a class="btn fl btn-w100 btn-yellow" id="preSecond">上一步</a>
+                                <input type="submit" class="btn fl btn-w100 btn-red" id="nextFourth" value="下一步"></input>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include footer %>
+</body>
+</html>

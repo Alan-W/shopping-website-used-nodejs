@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>publish</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script type="text/javascript" src = "/js/jquery-1.11.2.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    
+    <script type="text/javascript" src = "/js/publish.js"></script>
+</head>
+<body>
+    <div class="publish"> 
+        <% include header %>
+        <div class="container clearfix">
+            <div class="publish-nav wrapper">
+                <span></span>
+                <h2>发布项目</h2>
+            </div>
+            <div class="publish-procedure wrapper">
+                <dl>
+                    <dt>1.基本信息</dt>
+                    <dt style="background:#000;color:#fff;">2.项目出资信息</dt>
+                    <dt>2.草稿状态编辑项目</dt>
+                    <dt>3.人人投审核</dt>
+                </dl>
+            </div>
+            <!--基本信息-->
+            <div class="content-wrapper wrapper"style="display:<%= displa%>;">
+                <div class="content">
+                    <form action="first-publish-form" method= "post" class="clearfix" enctype="multipart/form-data" id="first-form">
+                        <div class="first-form">
+                            <div class="project-name div-pad30 clearfix">
+                                <span class="txt-right">项目名称：</span>
+                                <input type="text" class="input-w280 validate" name="remarkName" id="name" required>
+                                <span class="error-empty errMsg"></span>
+                            </div>
+                            <div class="financing-money div-pad30 clearfix">
+                                <span class="txt-right">筹资金额：</span>
+                                <input type="text" class="input-w280 number-validate" required id="moneytotal">
+                                <span class="error-empty errMsg"></span> 
+                                <b class="unit">元</b>
+                            </div>
+                            <div class="financing-days div-pad30 clearfix">
+                                <span class="txt-right">筹资天数：</span>
+                                <span class="unit">30天</span>
+                            </div>
+                            <div class="industry-type div-pad30 clearfix">
+                                <span class="txt-right">行业类别：</span>
+                                <select id="protype" class="trade" name="protype">
+                                    <option value="0">请选择</option>
+                                    <option value="美食">美食</option>
+                                    <option value="休闲娱乐">休闲娱乐</option>
+                                    <option value="生活服务">生活服务</option>
+                                    <option value="教育培训">教育培训</option>
+                                    <option value="互联网金融">互联网金融</option>
+                                </select>
+                                <span class="error-empty errMsg"></span>
+                            </div>
+                            <div class="shop-address div-pad30">
+                                <span class="txt-right">新店地址：</span>
+                                <select class="address" id="province" name="province">
+                                    <option value="0">请选择</option>
+                                    <option value="北京市">北京市</option>
+                                    <option value="天津市">天津市</option>
+                                    <option value="广东省">广东省</option>
+                                    <option value="河北省">河北省</option>
+                                    <option value="河南省">河南省</option>
+                                    <option value="浙江省">浙江省</option>
+                                    <option value="内蒙古自治区">内蒙古自治区</option>
+                                    <option value="辽宁省">辽宁省</option>
+                                    <option value="湖南省">湖南省</option>
+                                    <option value="湖北省">湖北省</option>
+                                </select>
+                                <select id="city" class="address">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <select id="district" class="address">
+                                    <option value="0">请选择</option>
+                                </select>
+                                <span class="error-empty errMsg" id="addressErr"></span>
+                            </div>
+                            <div class="project-cover div-pad30 clearfix">
+                                <span class="txt-right">项目封面：</span>
+                                <a class="choose-file btn btn-w100 btn-orange">
+                                    <input  type="file" name="logofiles" id="files" required>
+                                </a>
+                                <span class="support-type">支持jpg、jpeg、png、gif 格式，大小不超过2M。最佳尺寸：640 x 671px</span>
+                                <span class="errChoice error-empty errMsg"></span>
+                            </div>
+                            <div class="accept">
+                                <input type="checkbox" required>
+                                <span>我已阅读并同意《</span>
+                                <a href="">委托融资服务协议</a>》
+                            </div>
+                            <div class="submit fl">
+                                <input type="submit" class="input btn btn-w100 btn-red" id="nextSecond" value="下一步"></input>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--项目出资信息-->
+            <div class="content-wrapper wrapper" style="display:<%= displb%>;">
+                <div class="content">
+                    <form action="second-publish-forms" method= "post" class="clearfix" enctype="multipart/form-data" id="third-form" >
+                        <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                        <div class="reward clearfix" >
+                            <ul class="fl">
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>融资总额&nbsp;￥</strong>
+                                        </span>
+                                        <input type="text" class="input-w150 number-validate" required id="wholeMoney" name="wholeMoney">
+                                        <span class="error-empty errMsg"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>项目方出资及比例&nbsp;￥</strong>
+                                        </span>
+                                        <input type="text" class="input-w150 number-validate" required id="pubProportion" name="pubMoney">
+                                        <span class="error-empty errMsg"></span>
+                                        <i id="pubPercent"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>投资人出资及比例&nbsp;￥</strong>
+                                        </span>
+                                        <label class="inv-earings-ratio" id="invPropotion"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>项目方收益比例&nbsp;</strong>
+                                        </span>
+                                        <input type="text" class="input-w150 number-validate" required id="pubEarn" name="pubEarn">
+                                        <span class="error-empty errMsg"></span>
+                                        <i>%</i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span> 
+                                            <em>*</em>
+                                            <strong>投资方收益比例&nbsp;</strong>
+                                        </span>
+                                        <label class="inv-earings-ratio" id="invEarn"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>认购份数&nbsp;</strong>
+                                        </span>
+                                        <input type="text" class="input-w150" required id="buyParts" name="buyParts">
+                                        <span class="error-empty errMsg"></span>
+                                        <strong class="most">(最多不超过199份)</strong>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-inb">
+                                        <span>
+                                            <em>*</em>
+                                            <strong>单投资人最低投资金额&nbsp;￥</strong>
+                                        </span>
+                                        <label class="lowestmoney" id="perLowset"></label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="fr shares">
+                                <h6>份数推荐</h6>
+                                <div class="parts-intro" id="partsLst">
+                                </div>
+                            </div>
+                            <div class="submit fl">
+                                <a href="javascript:second1()" class="btn fl btn-w100 btn-yellow" id="preSecond">上一步</a>
+                                <input type="submit" class="btn fl btn-w100 btn-red" id="nextFourth" value="下一步"></input>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--草稿状态编辑项目-->
+            <div class="content-wrapper wrapper" style="display:<%= displc%>;">
+                <div class="content">
+                    <div class="dian-tit">店铺简介</div>
+                    <div class="change-list">
+                        <p>
+                            <span>背景图宣传图</span>
+                            <a href="void:javascript(0);" class="md-trigger" data-modal="modal-15">修改</a>
+
+                        </p>
+                        <p>
+                            <span>项目展示封面</span>
+                            <a href="void:javascript(0);"class="md-trigger" data-modal="modal-12">修改</a>
+                        </p>
+                        <p>
+                            <span>店铺基本信息</span>
+                            <a href="void:javascript(0);"class="md-trigger" data-modal="modal-14">修改</a>
+                        </p>
+                        <p>
+                            <span>编辑项目介绍</span>
+                            <a href="void:javascript(0);"class="md-trigger md-setperspective" data-modal="modal-17">修改</a>
+
+                        </p>
+                        <p>
+                            <span>修改融资需求</span>
+                            <a href="void:javascript(0);"class="md-trigger" data-modal="modal-8">修改</a>
+                        </p>
+                    </div>
+                     <!--第一个修改-->
+                    <div class="login-in md-modal md-effect-15 bgb" id="modal-15">
+                        <div class="md-content">
+                            <div class="login-box">
+                                <div class="login-top">
+                                    <span>修改背景展示图</span>
+                                    <a class="fr md-close">
+                                        <img src="/img/close-img.png"/>
+                                    </a>
+                                </div>
+                                <form action="/up-bigimg" method= "post" enctype="multipart/form-data">
+                                    <div class="uploadblock">
+                                        <p class="pad-30">你可以选择最能展现您项目的一张图片作为背景图
+                                        </p>
+                                        <div class="tuwen clearfix">
+                                            <div class="tu"></div>
+                                            <div class="wen">
+                                                <input id="upimg" type="file" name="biglogo" />
+                                                <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                                                <input class="btn btn-orange btn-w100" type="submit" name="submit" value="提交" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-overlay"></div>
+                    <!--第二个修改-->
+                    <div class="login-in md-modal md-effect-12 bgb" id="modal-12">
+                        <div class="md-content">
+                            <div class="login-box">
+                                <div class="login-top">
+                                    <span>修改封面展示图</span>
+                                    <a class="fr md-close">
+                                        <img src="/img/close-img.png"/>
+                                    </a>
+                                </div>
+                                <form action="/up-coverimg" method= "post" enctype="multipart/form-data">
+                                    <div class="uploadblock">
+                                        <p>你可以选择最能展现您项目的一张图片作为封面图</p>
+                                        <div class="tuwen clearfix">
+                                            <div class="tu"></div>
+                                            <div class="wen">
+                                                <input id="upimg" type="file" name="coverimg" />
+                                                <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+
+                                                <input class="btn btn-w100 btn-orange" type="submit" name="submit" value="提交" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-overlay"></div>
+
+                    <!--第三个修改-->
+                    <div class="login-in md-modal md-effect-14 bgb" id="modal-14">
+                        <div class="md-content">
+                            <div class="login-box">
+                                <div class="login-top">
+                                    <span>项目基本信息修改</span>
+                                    <a class="fr md-close">
+                                        <img src="/img/close-img.png"/>
+                                    </a>
+                                </div>
+                                <div class="uploadblock">
+                                    <form class="bainf" action="/edit-bainf" method= "post">
+                                        <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                                        <div>
+                                            <label>项目名称：</label>
+                                            <input type="text" name="name" id="editname" class="input-w250">
+                                        </div>
+                                        <div>
+                                            <label>一句话介绍：</label>
+                                            <input type="text" name="oneword" id="oneword" class="input-w250">
+                                        </div>
+                                        <div>
+                                            <label>行业：</label>
+                                            <select name="protype" id="editprotype">
+                                                <option value="0">请选择</option>
+                                                <option value="美食">美食</option>
+                                                <option value="休闲娱乐">休闲娱乐</option>
+                                                <option value="生活服务">生活服务</option>
+                                                <option value="教育培训">教育培训</option>
+                                                <option value="互联网金融">互联网金融</option>
+                                            <lect>
+                                        </div>
+                                        <div>
+                                            <label>所在地：</label>
+                                            <select id="editprovince"name="province">
+                                                <option value="0">请选择</option>
+                                                <option value="北京市">北京市</option>
+                                                <option value="天津市">天津市</option>
+                                                <option value="广东省">广东省</option>
+                                                <option value="河北省">河北省</option>
+                                                <option value="河南省">河南省</option>
+                                                <option value="浙江省">浙江省</option>
+                                                <option value="内蒙古自治区">内蒙古自治区</option>
+                                                <option value="辽宁省">辽宁省</option>
+                                                <option value="湖南省">湖南省</option>
+                                                <option value="湖北省">湖北省</option>
+                                            <lect>
+                                        </div>
+                                        <div>
+                                            <input class="btn btn-w100 btn-orange" type="submit" name="submit" value="提交" />
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-overlay"></div>
+
+                    <!--第四个修改-->
+                    <div class="login-in md-modal md-effect-17 bgb" id="modal-17">
+                        <div class="md-content">
+                            <div class="login-box">
+                                <div class="login-top">
+                                    <span>编辑项目介绍</span>
+                                    <a class="fr md-close">
+                                        <img src="/img/close-img.png"/>
+                                    </a>
+                                </div>
+                                <div class="uploadblock">
+                                    <form class="editproj" action="/edit-proj" method= "post" enctype="multipart/form-data">
+                                        <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                                        <div class="edit-container">
+                                            <div class="edit-toolbar">
+                                                <span class="edit-span edit1" onclick="showuploaddetailimg()"></span>
+                                            </div>
+                                            <div class="edit-iframe" id="edit-div" contentEditable="true"></div>
+                                        </div>
+                                        <textarea id="edit-code" name="editcode"></textarea>
+                                        <div>
+                                            <input class="btn btn-w100 btn-orange" type="submit" name="submit" value="提交" />
+                                        </div>
+                                    </form>
+                                    <div class="edit-upimg" id="publishuploaddetailimg">
+                                        <div class="login-box">
+                                            <div class="login-top">
+                                                <span>图片</span>
+                                                <a class="fr" href="javascript:hideuploaddetailimg();">
+                                                    <img src="/img/close-img.png"/>
+                                                </a>
+                                            </div>
+                                            <form action="/up-detailimg" method= "post" enctype="multipart/form-data">
+                                                <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                                                <input class="uping" type="file" name="detailimg" />
+                                                <input class="btn btn-w100 btn-orange" type="submit" name="submit" value="提交" />
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-overlay"></div>
+
+                    <!--第五个修改-->
+                    <div class="login-in md-modal md-effect-8 bgb" id="modal-8">
+                        <div class="md-content">
+                            <div class="login-box">
+                                <div class="login-top">
+                                    <span>融资需求修改</span>
+                                    <a class="fr md-close">
+                                        <img src="/img/close-img.png"/>
+                                    </a>
+                                </div>
+                                <div class="uploadblock">
+                                    <form class="bainf" action="/finan-need" method= "post" enctype="multipart/form-data">
+                                        <input style="display:none;" class="hideinf" type="text" name="hideinf" value=""/>
+                                        <div>
+                                            <label class="lab2"><span class="star">*</span>开店融资金额：</label>
+                                            <input class="input-w130" type="text" name="wholemoney" id="wholemoney"><span class="unit">元</span>
+                                        </div>
+                                        <div>
+                                            <label class="lab2"><span class="star">*</span>项目方出资金额：</label>
+                                            <input type="text" class="input-w130" name="pubmoney"id="pubmoney"><span class="unit" >元</span>
+                                            <label class="lab2">投资人出资金额：</label>
+                                            <input type="text" class="input-w130" id="investmoney"><span class="unit">元</span>
+                                        </div>
+                                        <div>
+                                            <label class="lab2"><span class="star">*</span>认购份数：</label>
+                                            <input type="text" class="input-w130" name="buyparts"id="buyparts"><span class="unit" >份</span>
+                                            <label class="lab2">个人最低投资金额：</label>
+                                            <input type="text" class="input-w130" id="perpart"><span class="unit">元</span>
+                                        </div>
+                                        <div>
+                                            <label class="lab2">项目方出资所占比例：</label>
+                                            <input type="text" class="input-w130" id="pubrate"><span class="unit">%</span>
+                                            <label class="lab2">投资人出资比例：</label>
+                                            <input type="text" class="input-w130" id="investrate"><span class="unit">%</span>
+                                        </div>
+                                        <div>
+                                            <label class="lab2"><span class="star">*</span>项目方收益所占比例：</label>
+                                            <input type="text" class="input-w130" name="pubearn" id="pubearn"><span class="unit" >%</span>
+                                            <label class="lab2">投资人收益比例：</label>
+                                            <input type="text" class="input-w130" id="investearn"><span class="unit">%</span>
+                                        </div>
+                                        <input class="center btn btn-w100 btn-orange" type="submit" name="submit" value="提交" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-overlay"></div>
+            </div>        
+        </div>
+        <% include footer %>
+    </div>
+    <script src="js/classie.js"></script>
+    <script src="js/modalEffects.js"></script>
+</body>
+</html>
